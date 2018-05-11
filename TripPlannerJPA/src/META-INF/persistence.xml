@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<!-- change name per project, referenced by the EntityManagerFactory -->
-	<persistence-unit name="Xtreme9Lives">
+	<persistence-unit name="TripPlanner">
 		<!-- provider always has to go first -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
@@ -14,7 +14,7 @@
 		<properties>
 			<!-- change database per project -->
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/xtremedb" />
+				value="jdbc:mysql://localhost:3306/tripplannerdb" />
 			<property name="javax.persistence.jdbc.user" value="planner" />
 			<property name="javax.persistence.jdbc.password"
 				value="goodjob" />
