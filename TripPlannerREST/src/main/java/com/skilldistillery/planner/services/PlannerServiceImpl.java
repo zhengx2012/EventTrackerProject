@@ -80,11 +80,16 @@ public class PlannerServiceImpl implements PlannerService {
 
 	@Override
 	public Boolean deleteById(int id) {
-		plannerRepo.deleteById(id);
-		if (plannerRepo.findById(id) != null) {
-			return false;
+		try {
+			plannerRepo.deleteById(id);
+			return true;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
 		}
-		return true;
+
+		return false;
 	}
 
 }
