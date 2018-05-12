@@ -9,7 +9,7 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
 		<!-- add the class setting to so the database knows where to go -->
-		<class>com.skilldistillery.xtreme.entities.Planner</class>
+		<class>com.skilldistillery.planner.entities.Planner</class>
 
 		<properties>
 			<!-- change database per project -->

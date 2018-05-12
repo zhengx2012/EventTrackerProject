@@ -128,4 +128,81 @@ public class Planner {
 		this.tripExpenses = tripExpenses;
 	}
 
+	/* helpers */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((city == null) ? 0 : city.hashCode());
+		result = prime * result + ((country == null) ? 0 : country.hashCode());
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + ((flightCompany == null) ? 0 : flightCompany.hashCode());
+		result = prime * result + ((flightNumber == null) ? 0 : flightNumber.hashCode());
+		result = prime * result + ((flightTime == null) ? 0 : flightTime.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((state == null) ? 0 : state.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(tripExpenses);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Planner other = (Planner) obj;
+		if (city == null) {
+			if (other.city != null)
+				return false;
+		} else if (!city.equals(other.city))
+			return false;
+		if (country == null) {
+			if (other.country != null)
+				return false;
+		} else if (!country.equals(other.country))
+			return false;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (flightCompany == null) {
+			if (other.flightCompany != null)
+				return false;
+		} else if (!flightCompany.equals(other.flightCompany))
+			return false;
+		if (flightNumber == null) {
+			if (other.flightNumber != null)
+				return false;
+		} else if (!flightNumber.equals(other.flightNumber))
+			return false;
+		if (flightTime == null) {
+			if (other.flightTime != null)
+				return false;
+		} else if (!flightTime.equals(other.flightTime))
+			return false;
+		if (id != other.id)
+			return false;
+		if (state == null) {
+			if (other.state != null)
+				return false;
+		} else if (!state.equals(other.state))
+			return false;
+		if (Double.doubleToLongBits(tripExpenses) != Double.doubleToLongBits(other.tripExpenses))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Planner [id=" + id + ", city=" + city + ", state=" + state + ", country=" + country + ", date=" + date
+				+ ", flightTime=" + flightTime + ", flightNumber=" + flightNumber + ", flightCompany=" + flightCompany
+				+ ", tripExpenses=" + tripExpenses + "]";
+	}
+
 }

@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `planner` (
   `state` VARCHAR(45) NOT NULL,
   `country` VARCHAR(45) NOT NULL,
   `date` DATETIME NULL,
-  `flight_time` DATETIME NULL,
+  `flight_time` TIMESTAMP NULL,
   `flight_number` VARCHAR(45) NULL,
   `flight_company` VARCHAR(45) NULL,
   `trip_expenses` DECIMAL(6,2) NULL,

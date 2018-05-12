@@ -6,4 +6,5 @@ import com.skilldistillery.planner.entities.Planner;
 
 public interface PlannerRepository extends JpaRepository<Planner, Integer> {
 
+	Planner findByCityIgnoreCase(String city);
 }
