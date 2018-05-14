@@ -12,12 +12,14 @@ This application uses RESTful API Services to route to the database. The databas
 
 TripPlannerJPA holds the Planner entity and the Spring Starter Project, TripPlannerREST holds the PlannerRepository Interface which gets data from the database. The PlannerServiceImpl class has methods that call the PlannerRepository to get the data from the database. It acts as middleware to keep users from accessing the data directly. The PlannerController contains all the routes.
 
-Inside the PlannerController, there are paths for CRUD operations. The URI, planner with a GET method, retrieves all of the plans in the database, planner/{id} with the @PathVariable id finds a plan by id, and also uses a GET method.
+Inside the PlannerController, there are paths for CRUD operations. The URI, planner, with a GET method, retrieves all of the plans in the database, planner/{id} with the @PathVariable id finds a plan by id, and also uses a GET method. The planner route with the POST method will create new plans. There are two versions of updating, a replace all based on the planner/{id} with a PUT method, and a replace for certain portions of the plan by using a PATCH method. Lastly, the DELETE method for planner/{id}, will delete any plans the user has.
+
+The front end for this application has not yet been created, but will be pending in the next week.
 
 ### Lessons Learned
 
-* Make sure all .gradle and .propertie files are properly filled out.
-*
+* Make sure all .gradle and .properties files are properly filled out.
+* Name all packages correctly.
 
 ### Technologies Used
 
