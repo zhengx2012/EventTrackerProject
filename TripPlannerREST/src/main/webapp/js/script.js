@@ -35,5 +35,11 @@ function displayPlansIndex(trips) {
 	}
 	
 	div.appendChild(table);
-	
 }
+
+//$(function () {
+//    $('#datetimepicker').datetimepicker({
+//        inline: true,
+//        sideBySide: true
+//    });
+//});

@@ -15,20 +15,61 @@
 	<div class="container">
 		<h1>Welcome to Trip Planner</h1>
 	</div>
-	
+
 	<hr>
-	
+
 	<div class="container">
 		<div id="tripsIndex"></div>
 	</div>
-	
+
 	<hr>
-	
+
 	<div class="container">
 		<form name="createTrip" method="post">
+			<h2>Add a Trip</h2>
 			<div class="form-group">
-				<input type="text" name="" class="form-control" placeholder="">
-				<button type=submit class="btn btn-primary" name="addTrip">Add
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputCity">City</label> <input type="text"
+							class="form-control" id="inputCity" name="city">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputState">State</label> <input type="text"
+							class="form-control" id="inputState" name="state">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputCountry">Country</label> <input type="text"
+							class="form-control" id="inputCountry" name="country">
+					</div>
+				</div>
+				
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputDate">Date</label> <input type="date"
+							class="form-control" id="inputDate" name="date">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputState">Flight Time</label> <input type="time"
+							class="form-control" id="inputCountry" name="time">
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputFligthNum">Flight Number</label> <input
+							type="text" class="form-control" id="inputFligthNum" name="flightNumber">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputFlightCompany">Flight Company</label> <input
+							type="text" class="form-control" id="inputFlightCompany" name="flightCompany">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputExpenses">Trip Expenses</label> <input type="text"
+							class="form-control" id="inputExpenses" name="tripExpenses">
+					</div>
+				</div>
+
+				<button type=submit class="btn btn-primary btn-block" name="addTrip">Add
 					Trip</button>
 			</div>
 		</form>
