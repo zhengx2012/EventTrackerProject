@@ -23,33 +23,38 @@ public class PlannerController {
 	public String ping() {
 		return "pong";
 	}
+	
+	@RequestMapping(path = "/", method = RequestMethod.GET)
+	public String home() {
+		return "index.html";
+	}
 
-	@RequestMapping(path = "/planners", method = RequestMethod.GET)
+	@RequestMapping(path = "/trips", method = RequestMethod.GET)
 	public List<Planner> index() {
 		return plannerService.findAll();
 	}
 
-	@RequestMapping(path = "/planners/{id}", method = RequestMethod.GET)
+	@RequestMapping(path = "/trips/{id}", method = RequestMethod.GET)
 	public Planner show(@PathVariable int id) {
 		return plannerService.findById(id);
 	}
 
-	@RequestMapping(path = "/planners", method = RequestMethod.POST)
+	@RequestMapping(path = "/trips", method = RequestMethod.POST)
 	public Planner create(@RequestBody Planner plan) {
 		return plannerService.addPlan(plan);
 	}
 
-	@RequestMapping(path = "/planners/{id}", method = RequestMethod.PUT)
+	@RequestMapping(path = "/trips/{id}", method = RequestMethod.PUT)
 	public Planner replace(@PathVariable int id, @RequestBody Planner plan) {
 		return plannerService.replaceById(id, plan);
 	}
 
-	@RequestMapping(path = "/planners/{id}", method = RequestMethod.PATCH)
+	@RequestMapping(path = "/trips/{id}", method = RequestMethod.PATCH)
 	public Planner update(@PathVariable int id, @RequestBody Planner plan) {
 		return plannerService.updateById(id, plan);
 	}
 
-	@RequestMapping(path = "/planners/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(path = "/trips/{id}", method = RequestMethod.DELETE)
 	public Boolean destroy(@PathVariable int id) {
 		return plannerService.deleteById(id);
 	}
