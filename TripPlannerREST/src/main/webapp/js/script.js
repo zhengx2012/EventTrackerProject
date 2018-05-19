@@ -147,3 +147,23 @@ function addTrip(addedTrip) {
 	xhr.send(JSON.stringify(addedTrip));
 	loadTripsIndex();
 }
+
+function deleteTrip(tripId) {
+	var xhr = new XMLHttpRequest();
+	xhr.open('delete', 'api/trips'+ tripId, true);
+	
+	xhr.setRequestHeader("Content-type", "application/json")
+	
+	xhr.onreadystatechange = function() {
+		if ( xhr.readyState === 4 ) {
+			if ( xhr.status === 200 ) {
+				var data = JSON.parse(xhr.responseText);
+			} else {
+				console.log("DELETE request failed " + xhr.requestBody);
+			}
+		}
+	}
+	
+	xhr.send(JSON.stringify(addedTrip));
+	loadTripsIndex();
+}

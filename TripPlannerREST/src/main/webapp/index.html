@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Trip Planner</title>
+
+<link rel="stylesheet" href="stylesheet.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -13,7 +15,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Welcome to Trip Planner</h1>
+		<h1 class="header">Welcome to Trip Planner</h1>
 	</div>
 
 	<hr>
@@ -21,18 +23,22 @@
 	<div class="container">
 		<div id="tripsIndex"></div>
 	</div>
-	
+
 	<hr>
-	
+
 	<div class="container">
 		<div id="tripDetails"></div>
+		<!-- <form name="editTrip">
+			<button type= submit class="btn "></button>
+		</form>
+		<form name="deleteTrip"></form> -->
 	</div>
 
 	<hr>
 
 	<div class="container">
 		<form name="createTripForm" method="post">
-			<h2>Add a Trip</h2>
+			<h3 class="header">Add a Trip</h3>
 			<div class="form-group">
 				<div class="form-row">
 					<div class="form-group col-md-4">
@@ -48,7 +54,7 @@
 							class="form-control" id="inputCountry" name="country">
 					</div>
 				</div>
-				
+
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="inputDate">Date</label> <input type="date"
@@ -63,15 +69,18 @@
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="inputFlightNum">Flight Number</label> <input
-							type="text" class="form-control" id="inputFlightNum" name="flightNumber">
+							type="text" class="form-control" id="inputFlightNum"
+							name="flightNumber">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="inputFlightCompany">Flight Company</label> <input
-							type="text" class="form-control" id="inputFlightCompany" name="flightCompany">
+							type="text" class="form-control" id="inputFlightCompany"
+							name="flightCompany">
 					</div>
 					<div class="form-group col-md-4">
-						<label for="inputExpenses">Trip Expenses</label> <input type="text"
-							class="form-control" id="inputExpenses" name="tripExpenses">
+						<label for="inputExpenses">Trip Expenses</label> <input
+							type="text" class="form-control" id="inputExpenses"
+							name="tripExpenses">
 					</div>
 				</div>
 
