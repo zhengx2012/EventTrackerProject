@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `planner` (
   `state` VARCHAR(45) NOT NULL,
   `country` VARCHAR(45) NOT NULL,
   `date` DATE NOT NULL,
-  `flight_time` TIMESTAMP NULL,
+  `flight_time` TIME NULL,
   `flight_number` VARCHAR(45) NULL,
   `flight_company` VARCHAR(45) NULL,
   `trip_expenses` DECIMAL(6,2) NOT NULL,
@@ -50,8 +50,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `tripplannerdb`;
-INSERT INTO `planner` (`id`, `city`, `state`, `country`, `date`, `flight_time`, `flight_number`, `flight_company`, `trip_expenses`) VALUES (1, 'Denver', 'Colorado', 'United States of America', '2018-05-10', '2018-05-10 07:00:00', 'G7457', 'Delta', 500.00);
+INSERT INTO `planner` (`id`, `city`, `state`, `country`, `date`, `flight_time`, `flight_number`, `flight_company`, `trip_expenses`) VALUES (1, 'Denver', 'Colorado', 'United States of America', '2018-05-10', '07:00:00', 'G7457', 'Delta', 500.00);
 INSERT INTO `planner` (`id`, `city`, `state`, `country`, `date`, `flight_time`, `flight_number`, `flight_company`, `trip_expenses`) VALUES (2, 'West Palm Beach', 'Florida', 'United States', '2018-05-30', '2018-05-30 13:30:00', 'R4579', 'United', 300.00);
 
 COMMIT;
-

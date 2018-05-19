@@ -1,14 +1,13 @@
 package com.skilldistillery.planner.entities;
 
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Time;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 public class Planner {
@@ -21,12 +20,10 @@ public class Planner {
 	private String state;
 	private String country;
 	
-	@Temporal(TemporalType.DATE)
 	private Date date;
 	
-	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "flight_time")
-	private Date flightTime;
+	private Time flightTime;
 
 	@Column(name = "flight_number")
 	private String flightNumber;
@@ -41,7 +38,7 @@ public class Planner {
 	public Planner() {
 	}
 
-	public Planner(int id, String city, String state, String country, Date date, Date flightTime, String flightNumber,
+	public Planner(int id, String city, String state, String country, Date date, Time flightTime, String flightNumber,
 			String flightCompany, double tripExpenses) {
 		super();
 		this.id = id;
@@ -96,11 +93,11 @@ public class Planner {
 		this.date = date;
 	}
 
-	public Date getFlightTime() {
+	public Time getFlightTime() {
 		return flightTime;
 	}
 
-	public void setFlightTime(Date flightTime) {
+	public void setFlightTime(Time flightTime) {
 		this.flightTime = flightTime;
 	}
 

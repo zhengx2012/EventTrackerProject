@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51c692f2-8113-4b19-9624-49ec1b68768d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_oxygen_/write.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/TripPlannerJPA/bin/test/log4j.properties" afterPath="$PROJECT_DIR$/TripPlannerJPA/bin/test/log4j.properties" />
-      <change beforePath="$PROJECT_DIR$/TripPlannerJPA/src/log4j.properties" afterPath="$PROJECT_DIR$/TripPlannerJPA/src/log4j.properties" />
-      <change beforePath="$PROJECT_DIR$/TripPlannerREST/bin/main/com/skilldistillery/planner/TripPlannerRestApplication.class" afterPath="$PROJECT_DIR$/TripPlannerREST/bin/main/com/skilldistillery/planner/TripPlannerRestApplication.class" />
-      <change beforePath="$PROJECT_DIR$/TripPlannerREST/build.gradle" afterPath="$PROJECT_DIR$/TripPlannerREST/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/TripPlannerREST/src/main/java/com/skilldistillery/planner/TripPlannerRestApplication.java" afterPath="$PROJECT_DIR$/TripPlannerREST/src/main/java/com/skilldistillery/planner/TripPlannerRestApplication.java" />
+      <change beforePath="$PROJECT_DIR$/TripPlannerJPA/bin/test/com/skilldistillery/planner/entities/Planner.class" afterPath="$PROJECT_DIR$/TripPlannerJPA/bin/test/com/skilldistillery/planner/entities/Planner.class" />
+      <change beforePath="$PROJECT_DIR$/TripPlannerJPA/src/com/skilldistillery/planner/entities/Planner.java" afterPath="$PROJECT_DIR$/TripPlannerJPA/src/com/skilldistillery/planner/entities/Planner.java" />
+      <change beforePath="$PROJECT_DIR$/TripPlannerREST/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/TripPlannerREST/src/main/webapp/index.html" />
+      <change beforePath="$PROJECT_DIR$/TripPlannerREST/src/main/webapp/js/script.js" afterPath="$PROJECT_DIR$/TripPlannerREST/src/main/webapp/js/script.js" />
+      <change beforePath="$PROJECT_DIR$/TripPlannerREST/tripplanner.sql" afterPath="$PROJECT_DIR$/TripPlannerREST/tripplanner.sql" />
+      <change beforePath="$PROJECT_DIR$/tripplanner.mwb" afterPath="$PROJECT_DIR$/tripplanner.mwb" />
+      <change beforePath="$PROJECT_DIR$/tripplanner.mwb.bak" afterPath="$PROJECT_DIR$/tripplanner.mwb.bak" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,12 +17,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TripPlannerREST/src/main/webapp/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TripPlannerREST/src/main/webapp/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="860">
+              <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/TripPlannerREST/src/main/webapp/js/script.js" />
+      </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
@@ -46,7 +77,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -59,13 +90,43 @@
               <item name="TripPlanner" type="462c0819:PsiDirectoryNode" />
               <item name="TripPlannerREST" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TripPlanner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TripPlanner" type="462c0819:PsiDirectoryNode" />
+              <item name="TripPlannerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TripPlanner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TripPlanner" type="462c0819:PsiDirectoryNode" />
+              <item name="TripPlannerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TripPlanner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TripPlanner" type="462c0819:PsiDirectoryNode" />
+              <item name="TripPlannerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TripPlanner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TripPlanner" type="462c0819:PsiDirectoryNode" />
+              <item name="TripPlannerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -184,6 +245,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -198,7 +260,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -213,11 +275,40 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/TripPlannerREST/src/main/webapp/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TripPlannerREST/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TripPlannerREST/src/main/webapp/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="860">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
