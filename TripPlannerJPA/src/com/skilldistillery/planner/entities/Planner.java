@@ -20,10 +20,10 @@ public class Planner {
 	private String city;
 	private String state;
 	private String country;
-
+	
 	@Temporal(TemporalType.DATE)
 	private Date date;
-
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "flight_time")
 	private Date flightTime;
