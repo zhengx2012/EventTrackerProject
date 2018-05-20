@@ -13,7 +13,7 @@ function init() {
 		addedTrip.state = createTripForm.state.value;
 		addedTrip.country = createTripForm.country.value;
 		addedTrip.date = createTripForm.date.value;
-		addedTrip.flightTime = createTripForm.flightTime.value;
+		addedTrip.flightTime = (createTripForm.flightTime.value? createTripForm.flightTime.value +":00" : '00:00:00');
 		addedTrip.flightNumber = createTripForm.flightNumber.value;
 		addedTrip.flightCompany = createTripForm.flightCompany.value;
 		addedTrip.tripExpenses = createTripForm.tripExpenses.value;
@@ -36,64 +36,12 @@ function loadTripsIndex() {
 		}
 	};
 	xhr.send(null);
-}
-
-function getTrip(tripId) {
-	var xhr = new XMLHttpRequest();
-	xhr.open('get', 'api/trips/' + tripId, true);
-	xhr.onreadystatechange = function() {
-		if ( xhr.readyState === xhr.DONE ) {
-			if ( xhr.status === 200 ) {
-				var data = JSON.parse(xhr.responseText);
-				displayTrip(data);
-			} else {
-				displayTripNotFound(tripId);
-			}
-		}
-
-	}
-	xhr.send(null);
-}
-
-function displayTrip(trip) {
-	var div = document.getElementById('tripDetails');
-	div.textContent = '';
-	var location = document.createElement('h3');
-	location.textContent = trip.city + ', ' + trip.state + ', ' + trip.country;
-	div.appendChild(location);
-	
-	var ul = document.createElement('ul');
-	var li = document.createElement('li');
-	li.textContent = trip.date;
-	ul.appendChild(li);
-	
-	li = document.createElement('li');
-	li.textContent = trip.flightTime;
-	ul.appendChild(li);
-	
-	li = document.createElement('li');
-	li.textContent = trip.flightNumber;
-	ul.appendChild(li);
-	
-	li = document.createElement('li');
-	li.textContent = trip.flightCompany;
-	ul.appendChild(li);
-	
-	li = document.createElement('li');
-	li.textContent = trip.tripExpenses;
-	ul.appendChild(li);
-	
-	div.appendChild(ul);
-
-}
-
-function displayTripNotFound() {
-	var div = document.getElementById('tripDetails');
-	div.textContent = 'No trips found';
+	setTimeout(loadTripsIndex, 5000)
 }
 
 function displayTripsIndex(trips) {
 	var div = document.getElementById('tripsIndex');
+	div.textContent = '';
 	var table = document.createElement('table');
 	var thead = document.createElement('thead');
 	var th = document.createElement('th');
@@ -127,6 +75,65 @@ function displayTripsIndex(trips) {
 
 	div.appendChild(table);
 }
+
+function getTrip(tripId) {
+	var xhr = new XMLHttpRequest();
+	xhr.open('get', 'api/trips/' + tripId, true);
+	xhr.onreadystatechange = function() {
+		if ( xhr.readyState === xhr.DONE ) {
+			if ( xhr.status === 200 ) {
+				var data = JSON.parse(xhr.responseText);
+				displayTripDetails(data);
+			} else {
+				displayTripNotFound(tripId);
+			}
+		}
+
+	}
+	xhr.send(null);
+}
+
+function displayTripDetails(trip) {
+	var div = document.getElementById('tripDetails');
+	div.textContent = '';
+	var location = document.createElement('h3');
+	location.textContent = trip.city + ', ' + trip.state + ', ' + trip.country;
+	div.appendChild(location);
+	
+	var ul = document.createElement('ul');
+	var li = document.createElement('li');
+	li.textContent = trip.date;
+	ul.appendChild(li);
+	
+	li = document.createElement('li');
+	li.textContent = trip.flightTime;
+	ul.appendChild(li);
+	
+	li = document.createElement('li');
+	li.textContent = trip.flightNumber;
+	ul.appendChild(li);
+	
+	li = document.createElement('li');
+	li.textContent = trip.flightCompany;
+	ul.appendChild(li);
+	
+	li = document.createElement('li');
+	li.textContent = trip.tripExpenses;
+	ul.appendChild(li);
+	
+	div.appendChild(ul);
+	
+	var editButton = document.createElement('button');
+	var deleteButton = document.createElement('button');
+
+}
+
+function displayTripNotFound() {
+	var div = document.getElementById('tripDetails');
+	div.textContent = 'No trips found';
+}
+
+
 
 function addTrip(addedTrip) {
 	var xhr = new XMLHttpRequest();
