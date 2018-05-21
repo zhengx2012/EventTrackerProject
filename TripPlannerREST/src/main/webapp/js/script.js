@@ -207,7 +207,7 @@ function updateTripForm(e) {
 	var formElem = document.createElement('input');
 	formElem.setAttribute('type', 'text');
 	formElem.setAttribute('name', 'city');
-	formElem.setAttribute('value', e.target.parentElement.city);
+	formElem.setAttribute('value', e.target.city);
 	document.editTripButton.appendChild(formElem);
 	
 	formElem = document.createElement('input');
@@ -255,8 +255,8 @@ function updateTripForm(e) {
 	var submitEditButton = document.createElement('button');
 	submitEditButton.innerHTML = "Submit Edit";
 	submitEditButton.setAttribute('type', 'submit');
-	submitEditButton.setAttribute('class', 'btn btn-primary ');
-	document.editTripButton.appendChild(formElem);
+	submitEditButton.setAttribute('class', 'btn btn-info ');
+	document.editTripButton.appendChild(submitEditButton);
 
 	document.editTripForm.innerHTML = "";
 	document.editTripForm.appendChild(formElem);
