@@ -122,7 +122,7 @@ function displayTripDetails(trip) {
 	ul.appendChild(li);
 	
 	div.appendChild(ul);
-	editDeleteForm();
+	editDeleteForm(trip.id);
 
 }
 
@@ -131,7 +131,7 @@ function displayTripNotFound() {
 	div.textContent = 'No trips found';
 }
 
-function editDeleteForm(){
+function editDeleteForm(tripId){
 	var editButton = document.createElement('button');
 	editButton.innerHTML = "Edit";
 	editButton.setAttribute('type', 'submit');
@@ -145,7 +145,7 @@ function editDeleteForm(){
 	deleteButton.setAttribute('class', 'btn btn-danger');
 	
 	deleteTripForm.appendChild(deleteButton);
-	deleteButton.addEventListener('click', deleteTrip(trip.id));
+	deleteButton.addEventListener('click', deleteTrip(tripId));
 }
 
 function addTrip(addedTrip) {
