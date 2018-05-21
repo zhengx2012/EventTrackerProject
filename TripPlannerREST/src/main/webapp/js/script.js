@@ -122,9 +122,7 @@ function displayTripDetails(trip) {
 	ul.appendChild(li);
 	
 	div.appendChild(ul);
-	
-	var editButton = document.createElement('button');
-	var deleteButton = document.createElement('button');
+	editDeleteForm();
 
 }
 
@@ -133,7 +131,22 @@ function displayTripNotFound() {
 	div.textContent = 'No trips found';
 }
 
-
+function editDeleteForm(){
+	var editButton = document.createElement('button');
+	editButton.innerHTML = "Edit";
+	editButton.setAttribute('type', 'submit');
+	editButton.setAttribute('class', 'btn btn-primary ');
+	
+	document.editTripForm.appendChild(editButton);
+	
+	var deleteButton = document.createElement('button');
+	deleteButton.innerHTML = "Delete";
+	deleteButton.setAttribute('type', 'submit');
+	deleteButton.setAttribute('class', 'btn btn-danger');
+	
+	deleteTripForm.appendChild(deleteButton);
+	deleteButton.addEventListener('click', deleteTrip(trip.id));
+}
 
 function addTrip(addedTrip) {
 	var xhr = new XMLHttpRequest();
@@ -157,20 +170,20 @@ function addTrip(addedTrip) {
 
 function deleteTrip(tripId) {
 	var xhr = new XMLHttpRequest();
-	xhr.open('delete', 'api/trips'+ tripId, true);
+	xhr.open('delete', 'api/trips/'+ tripId, true);
 	
 	xhr.setRequestHeader("Content-type", "application/json")
 	
 	xhr.onreadystatechange = function() {
 		if ( xhr.readyState === 4 ) {
 			if ( xhr.status === 200 ) {
-				var data = JSON.parse(xhr.responseText);
+				
 			} else {
 				console.log("DELETE request failed " + xhr.requestBody);
 			}
 		}
 	}
 	
-	xhr.send(JSON.stringify(addedTrip));
+	xhr.send(tripId);
 	loadTripsIndex();
 }
