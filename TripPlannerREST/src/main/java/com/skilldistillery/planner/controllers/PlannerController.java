@@ -51,7 +51,10 @@ public class PlannerController {
 
 	@RequestMapping(path = "/trips/{id}", method = RequestMethod.PATCH)
 	public Planner update(@PathVariable int id, @RequestBody Planner plan) {
-		return plannerService.updateById(id, plan);
+		System.out.println(plan);
+		Planner updatedPlan = plannerService.updateById(id, plan);
+		System.out.println(updatedPlan);
+		return updatedPlan;
 	}
 
 	@RequestMapping(path = "/trips/{id}", method = RequestMethod.DELETE)
