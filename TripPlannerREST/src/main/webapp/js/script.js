@@ -165,8 +165,11 @@ function editDeleteFormButtons(trip) {
 
 	document.editTripButton.innerHTML = "";
 	document.editTripButton.appendChild(editButton);
-	editButton.addEventListener('click', updateTripForm);
 	editButton.id = trip.id;
+	editButton.addEventListener('click', function(e){
+		e.preventDefault();
+		updateTripForm(trip)
+	});
 
 	var deleteButton = document.createElement('button');
 	deleteButton.innerHTML = "Delete";
@@ -199,67 +202,65 @@ function addTrip(addedTrip) {
 	loadTripsIndex();
 }
 
-function updateTripForm(e) {
-	e.preventDefault();
-	var tId = e.target.id;
-	console.log(tId);
-
+function updateTripForm(trip) {
+	console.log(trip);
+//	var 
 	var formElem = document.createElement('input');
 	formElem.setAttribute('type', 'text');
 	formElem.setAttribute('name', 'city');
-	formElem.setAttribute('value', e.target.city);
+	formElem.setAttribute('value', trip.city);
 	document.editTripButton.appendChild(formElem);
 	
 	formElem = document.createElement('input');
 	formElem.setAttribute('type', 'text');
 	formElem.setAttribute('name', 'state');
-	formElem.setAttribute('value', e.target.parentElement.state);
+	formElem.setAttribute('value', trip.state);
 	document.editTripButton.appendChild(formElem);
 	
 	formElem = document.createElement('input');
 	formElem.setAttribute('type', 'text');
 	formElem.setAttribute('name', 'city');
-	formElem.setAttribute('value', e.target.parentElement.country);
+	formElem.setAttribute('value', trip.country);
 	document.editTripButton.appendChild(formElem);
 	
 	formElem = document.createElement('input');
 	formElem.setAttribute('type', 'date');
 	formElem.setAttribute('name', 'city');
-	formElem.setAttribute('value', e.target.parentElement.date);
+	formElem.setAttribute('value', trip.date);
 	document.editTripButton.appendChild(formElem);
 	
 	formElem = document.createElement('input');
 	formElem.setAttribute('type', 'time');
 	formElem.setAttribute('name', 'city');
-	formElem.setAttribute('value', e.target.parentElement.flightTime);
+	formElem.setAttribute('value', trip.flightTime);
 	document.editTripButton.appendChild(formElem);
 	
 	formElem = document.createElement('input');
 	formElem.setAttribute('type', 'text');
 	formElem.setAttribute('name', 'city');
-	formElem.setAttribute('value', e.target.parentElement.flightNumber);
+	formElem.setAttribute('value', trip.flightNumber);
 	document.editTripButton.appendChild(formElem);
 	
 	formElem = document.createElement('input');
 	formElem.setAttribute('type', 'text');
 	formElem.setAttribute('name', 'city');
-	formElem.setAttribute('value', e.target.parentElement.flightCompany);
+	formElem.setAttribute('value', trip.flightCompany);
 	document.editTripButton.appendChild(formElem);
 	
 	formElem = document.createElement('input');
 	formElem.setAttribute('type', 'text');
 	formElem.setAttribute('name', 'city');
-	formElem.setAttribute('value', e.target.parentElement.tripExpenses);
+	formElem.setAttribute('value', trip.tripExpenses);
 	document.editTripButton.appendChild(formElem);
 	
 	var submitEditButton = document.createElement('button');
 	submitEditButton.innerHTML = "Submit Edit";
 	submitEditButton.setAttribute('type', 'submit');
 	submitEditButton.setAttribute('class', 'btn btn-info ');
-	document.editTripButton.appendChild(submitEditButton);
 
 	document.editTripForm.innerHTML = "";
 	document.editTripForm.appendChild(formElem);
+	document.editTripForm.appendChild(submitEditButton);
 
 	submitEditButton.addEventListener('click', updateTrip);
 }
