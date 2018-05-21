@@ -251,8 +251,7 @@ function updateTripForm(e) {
 	editTripForm.setAttribute('value', e.target.parentElement.tripExpenses);
 	document.editTripButton.appendChild(formElem);
 	
-	
-	var editButton = document.createElement('button');
+	var submitEditButton = document.createElement('button');
 	editButton.innerHTML = "Submit Edit";
 	editButton.setAttribute('type', 'submit');
 	editButton.setAttribute('class', 'btn btn-primary ');
@@ -260,13 +259,13 @@ function updateTripForm(e) {
 	document.editTripForm.innerHTML = "";
 	document.editTripForm.appendChild(editButton);
 
-	editButton.addEventListener('click', updateTrip);
+	submitEditButton.addEventListener('click', updateTrip);
 }
 
 function updateTrip(e) {
 	e.preventDefault();
 	var xhr = new XMLHttpRequest();
-	xhr.open('patch', 'api/trips/' + e.target.id, true);
+	xhr.open('patch', 'api/trips/' + e.target.parentElement.id, true);
 
 	xhr.setRequestHeader("Content-type", "application/json")
 
@@ -280,7 +279,7 @@ function updateTrip(e) {
 		}
 	}
 
-	xhr.send(e.target.id);
+	xhr.send(e.target.parentElement.id);
 }
 
 function deleteTrip(e) {
