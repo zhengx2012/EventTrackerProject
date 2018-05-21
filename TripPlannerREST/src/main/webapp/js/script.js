@@ -32,11 +32,12 @@ function loadTripsIndex() {
 			if ( this.status === 200 ) {
 				var trips = JSON.parse(this.responseText);
 				displayTripsIndex(trips);
+				showAggregateData(trips);
 			}
 		}
 	};
 	xhr.send(null);
-	setTimeout(loadTripsIndex, 5000)
+	setTimeout(loadTripsIndex, 5000);
 }
 
 function displayTripsIndex(trips) {
@@ -74,6 +75,25 @@ function displayTripsIndex(trips) {
 	table.appendChild(tbody);
 
 	div.appendChild(table);
+}
+
+function showAggregateData(trips){
+	var tripTotal = 0;
+	for ( var p in trips ) {
+		tripTotal += trips[p].tripExpenses;
+	}
+	
+	var div = document.getElementById('aggregateData');
+	div.textContent = '';
+	var title = document.createElement('h4');
+	title.setAttribute('class', 'header');
+	title.textContent = 'Total Trip Expenses';
+
+	var cost = document.createElement('p');
+	cost.textContent = tripTotal;
+	title.appendChild(cost);
+	
+	div.appendChild(title);
 }
 
 function getTrip(tripId) {
@@ -177,11 +197,11 @@ function addTrip(addedTrip) {
 function updateTripForm(e){
 	var tId = e.target.id;
 	console.log(tId);
+	
 	var formElem = document.createElement('input');
-	formElem.textContent = '';
 	editTripForm.setAttribute('type', 'text');
 	editTripForm.setAttribute('name', 'city');
-	editTripForm.setAttribute('value', e.target.city);
+	editTripForm.setAttribute('value', e.target.parentElement.city);
 	
 	
 	editButton.addEventListener('click', updateTrip);
