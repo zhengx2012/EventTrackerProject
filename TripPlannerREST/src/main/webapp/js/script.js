@@ -23,24 +23,6 @@ function init() {
 		addTrip(addedTrip);
 		createTripForm.reset();
 	});
-	
-//	document.editTripForm.submitEditButton.addEventListener('click', function(e) {
-//		e.preventDefault();
-//		var editedTrip = {};
-//		editedTrip.city = editTripForm.city.value;
-//		editedTrip.state = editTripForm.state.value;
-//		editedTrip.country = editTripForm.country.value;
-//		editedTrip.date = editTripForm.date.value;
-//		editedTrip.flightTime = (editTripForm.flightTime.value ? editTripForm.flightTime.value
-//				+ ":00"
-//				: '00:00:00');
-//		editedTrip.flightNumber = editTripForm.flightNumber.value;
-//		editedTrip.flightCompany = editTripForm.flightCompany.value;
-//		editedTrip.tripExpenses = editTripForm.tripExpenses.value;
-//
-//		updateTrip(editedTrip);
-//		editTripForm.reset();
-//	});
 }
 
 function loadTripsIndex() {
@@ -201,7 +183,6 @@ function updateTripForm(trip) {
 	console.log(trip);
 	document.editTripForm.innerHTML = "";
 
-	// var
 	var formElem = document.createElement('input');
 	formElem.setAttribute('type', 'text');
 	formElem.setAttribute('name', 'city');
