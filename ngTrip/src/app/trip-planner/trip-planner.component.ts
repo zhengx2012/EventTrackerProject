@@ -10,6 +10,7 @@ import { Trip } from '../models/trip';
 export class TripPlannerComponent implements OnInit {
   // class attributes
 
+  title = 'Welcome to Trip Planner';
   trips: Trip[] = [];
 
   trip = new Trip();

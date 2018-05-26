@@ -1,12 +1,12 @@
 <!-- Logo Header -->
 <div class="container">
-  <h1 class="header">Welcome to Trip Planner</h1>
+  <h1 class="header">{{title}}</h1>
   <hr>
 </div>
 
 <!-- All Upcoming Trips -->
 <div class="container" *ngIf="!selectedTrip && !editTrip">
-  <h3>Upcoming Trips <span class="badge"></span></h3>
+  <h3 class="header">Upcoming Trips <span class="badge"></span></h3>
   <table class="table table-striped table-bordered">
     <thead class="thead-dark">
       <tr>
@@ -17,7 +17,7 @@
     <tbody>
       <tr *ngFor="let trip of trips" (click)="showTripDetails(trip)">
         <td>{{trip.city}}</td>
-        <td>{{trip.date}}</td>
+        <td>{{trip.date | date:'longDate'}}</td>
       </tr>
     </tbody>
   </table>
@@ -28,7 +28,7 @@
   <div *ngIf="selectedTrip && !editTrip">
     <button class="btn btn-secondary" (click)="showTable()">Back to Trips</button>
     <h3>{{selectedTrip.city}}, {{selectedTrip.state}}, {{selectedTrip.country}}</h3>
-    <p>Date: {{selectedTrip.date}}</p>
+    <p>Date: {{selectedTrip.date | date:'longDate'}}</p>
     <p>Flight Time: {{selectedTrip.flightTime}}</p>
     <p>FLight Number: {{selectedTrip.flightNumber}}</p>
     <p>Flight Company: {{selectedTrip.flightCompany}}</p>
@@ -68,13 +68,13 @@
           <label for="inputFlightTime">Flight Time</label>
           <input type="time" class="form-control" name="flightTime" [(ngModel)]="trip.flightTime" />
         </div>
-      </div>
-
-      <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputFlightNum">Flight Number</label>
           <input type="text" class="form-control" name="flightNumber" [(ngModel)]="trip.flightNumber" />
         </div>
+      </div>
+
+      <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputFlightCompany">Flight Company</label>
           <input type="text" class="form-control" name="flightCompany" [(ngModel)]="trip.flightCompany" />
@@ -123,13 +123,13 @@
           <label for="inputFlightTime">Flight Time</label>
           <input type="time" class="form-control" name="flightTime" [(ngModel)]="editTrip.flightTime" />
         </div>
-      </div>
-
-      <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputFlightNum">Flight Number</label>
           <input type="text" class="form-control" name="flightNumber" [(ngModel)]="editTrip.flightNumber" />
         </div>
+      </div>
+
+      <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputFlightCompany">Flight Company</label>
           <input type="text" class="form-control" name="flightCompany" [(ngModel)]="editTrip.flightCompany" />

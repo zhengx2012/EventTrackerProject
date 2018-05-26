@@ -7,3 +7,4 @@ bin
 Servers
 .settings
 .recommenders
+package-lock.json

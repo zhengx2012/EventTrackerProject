@@ -8,12 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TripPlannerComponent } from './trip-planner/trip-planner.component';
 import { TripService } from './trip.service';
+import { UpcomingTripsPipe } from './upcoming-trips.pipe';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TripPlannerComponent
+    TripPlannerComponent,
+    UpcomingTripsPipe
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { TripService } from './trip.service';
     HttpClientModule
   ],
   providers: [
-    TripService
+    TripService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
