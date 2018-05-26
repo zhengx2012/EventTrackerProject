@@ -54,6 +54,7 @@ export class TripPlannerComponent implements OnInit {
       data => {
         this.showAllTrips(),
         this.editTrip = null;
+        this.showTable();
       },
       err => console.error('Observer got an error in updateTrip: ' + err)
     );

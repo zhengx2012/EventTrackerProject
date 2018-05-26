@@ -96,7 +96,7 @@
 <div class="container" *ngIf="editTrip">
 
   <form name="editTripForm">
-    <h3 class="header">Add a Trip</h3>
+    <h3 class="header">Edit Trip</h3>
     <div class="form-group">
 
       <div class="form-row">
@@ -140,9 +140,9 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-outline-info" (click)="editTrip = null">Save
+      <button type="submit" class="btn btn-outline-info" (click)="updateTrip(editTrip)">Save
       </button>
-      <button type="submit" class="btn btn-outline-danger" (click)="updateTrip(editTrip)">Cancel
+      <button type="submit" class="btn btn-outline-danger" (click)="editTrip = null">Cancel
       </button>
 
     </div>
