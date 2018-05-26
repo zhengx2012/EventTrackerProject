@@ -1,0 +1,159 @@
+<!-- Logo Header -->
+<div class="container">
+  <h1 class="header">Welcome to Trip Planner</h1>
+  <hr>
+</div>
+
+<!-- All Upcoming Trips -->
+<div class="container" *ngIf="!selectedTrip && !editTrip">
+  <h3>Upcoming Trips <span class="badge"></span></h3>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>Cities</th>
+        <th>Dates</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trip of trips" (click)="showTripDetails(trip)">
+        <td>{{trip.city}}</td>
+        <td>{{trip.date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Trip Details -->
+<div class="container">
+  <div *ngIf="selectedTrip && !editTrip">
+    <button class="btn btn-secondary" (click)="showTable()">Back to Trips</button>
+    <h3>{{selectedTrip.city}}, {{selectedTrip.state}}, {{selectedTrip.country}}</h3>
+    <p>Date: {{selectedTrip.date}}</p>
+    <p>Flight Time: {{selectedTrip.flightTime}}</p>
+    <p>FLight Number: {{selectedTrip.flightNumber}}</p>
+    <p>Flight Company: {{selectedTrip.flightCompany}}</p>
+    <p>Trip Expenses: {{selectedTrip.tripExpenses}}</p>
+
+    <button class="btn btn-info" (click)="setEditTrip(selectedTrip)">Update</button>
+    <button class="btn btn-danger" (click)="deleteTrip(selectedTrip.id)">Delete</button>
+  </div>
+</div>
+
+<!-- Create Trip Form -->
+<div class="container" *ngIf="!selectedTrip && !editTrip">
+  <form name="createTripForm">
+    <h3 class="header">Add a Trip</h3>
+    <div class="form-group">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputCity">City</label>
+          <input type="text" class="form-control" name="city" [(ngModel)]="trip.city" required />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">State</label>
+          <input type="text" class="form-control" name="state" [(ngModel)]="trip.state" required />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputCountry">Country</label>
+          <input type="text" class="form-control" name="country" [(ngModel)]="trip.country" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputDate">Date</label>
+          <input type="date" class="form-control" name="date" [(ngModel)]="trip.date" required />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputFlightTime">Flight Time</label>
+          <input type="time" class="form-control" name="flightTime" [(ngModel)]="trip.flightTime" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputFlightNum">Flight Number</label>
+          <input type="text" class="form-control" name="flightNumber" [(ngModel)]="trip.flightNumber" />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputFlightCompany">Flight Company</label>
+          <input type="text" class="form-control" name="flightCompany" [(ngModel)]="trip.flightCompany" />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputExpenses">Trip Expenses</label>
+          <input type="text" class="form-control" name="tripExpenses" [(ngModel)]="trip.tripExpenses" required/>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" (click)="createTrip(trip)">Add Trip
+      </button>
+
+    </div>
+  </form>
+</div>
+
+<!-- Edit Trip Form -->
+<div class="container" *ngIf="editTrip">
+
+  <form name="editTripForm">
+    <h3 class="header">Add a Trip</h3>
+    <div class="form-group">
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputCity">City</label>
+          <input type="text" class="form-control" name="city" [(ngModel)]="editTrip.city" required />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">State</label>
+          <input type="text" class="form-control" name="state" [(ngModel)]="editTrip.state" required />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputCountry">Country</label>
+          <input type="text" class="form-control" name="country" [(ngModel)]="editTrip.country" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputDate">Date</label>
+          <input type="date" class="form-control" name="date" [(ngModel)]="editTrip.date" required />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputFlightTime">Flight Time</label>
+          <input type="time" class="form-control" name="flightTime" [(ngModel)]="editTrip.flightTime" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputFlightNum">Flight Number</label>
+          <input type="text" class="form-control" name="flightNumber" [(ngModel)]="editTrip.flightNumber" />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputFlightCompany">Flight Company</label>
+          <input type="text" class="form-control" name="flightCompany" [(ngModel)]="editTrip.flightCompany" />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputExpenses">Trip Expenses</label>
+          <input type="text" class="form-control" name="tripExpenses" [(ngModel)]="editTrip.tripExpenses" required/>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-outline-info" (click)="editTrip = null">Save
+      </button>
+      <button type="submit" class="btn btn-outline-danger" (click)="updateTrip(editTrip)">Cancel
+      </button>
+
+    </div>
+  </form>
+
+</div>
+
+
+
+<!-- Aggregate Data -->
+<div class="container">
+  <div id="aggregateData"></div>
+  <hr>
+</div>
