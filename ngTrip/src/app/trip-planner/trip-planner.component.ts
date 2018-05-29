@@ -35,7 +35,16 @@ export class TripPlannerComponent implements OnInit {
   };
 
   getUpcomingTrips = function() {
-    return this.upcomingTripsPipe.transform(this.trips).length;
+    return this.trips.length;
+    // return this.upcomingTripsPipe.transform(this.trips).length;
+  };
+
+  aggregateTripExpense = function () {
+    let total = 0;
+    this.trips.forEach(trip => {
+      total += trip.tripExpenses;
+    });
+    return total;
   };
 
   // CRUD

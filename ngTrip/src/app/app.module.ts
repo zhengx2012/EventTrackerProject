@@ -27,7 +27,8 @@ import { DatePipe } from '@angular/common';
   ],
   providers: [
     TripService,
-    DatePipe
+    DatePipe,
+    UpcomingTripsPipe
   ],
   bootstrap: [AppComponent]
 })

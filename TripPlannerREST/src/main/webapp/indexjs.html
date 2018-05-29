@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Trip Planner</title>
+
+<link rel="stylesheet" href="stylesheet.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1 class="header">Welcome to Trip Planner</h1>
+	</div>
+
+	<hr>
+
+	<div class="container">
+		<div id="tripsIndex"></div>
+	</div>
+
+	<hr>
+
+	<div class="container">
+		<div id="tripDetails"></div>
+
+		<div id="editAndDeleteForms">
+			<form name="editTripButton"></form>
+			<form name="deleteTripForm"></form>
+		</div>
+	</div>
+
+	<div class="container">
+			<form name="editTripForm">
+				<div class="form-group"></div>
+			</form>
+	</div>
+
+	<hr>
+
+	<div class="container">
+		<div id="aggregateData"></div>
+	</div>
+
+	<hr>
+
+	<div class="container">
+		<form name="createTripForm" method="post">
+			<h3 class="header">Add a Trip</h3>
+			<div class="form-group">
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputCity">City</label> <input type="text"
+							class="form-control" id="inputCity" name="city" required>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputState">State</label> <input type="text"
+							class="form-control" id="inputState" name="state">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputCountry">Country</label> <input type="text"
+							class="form-control" id="inputCountry" name="country">
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputDate">Date</label> <input type="date"
+							class="form-control" id="inputDate" name="date">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputFlightTime">Flight Time</label> <input
+							type="time" class="form-control" id="inputFlightTime"
+							name="flightTime">
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputFlightNum">Flight Number</label> <input
+							type="text" class="form-control" id="inputFlightNum"
+							name="flightNumber">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputFlightCompany">Flight Company</label> <input
+							type="text" class="form-control" id="inputFlightCompany"
+							name="flightCompany">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputExpenses">Trip Expenses</label> <input
+							type="text" class="form-control" id="inputExpenses"
+							name="tripExpenses">
+					</div>
+				</div>
+
+				<button type=submit class="btn btn-primary btn-block" name="addTrip">Add
+					Trip</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
