@@ -14,7 +14,9 @@ TripPlannerJPA holds the Planner entity and the Spring Starter Project, TripPlan
 
 Inside the PlannerController, there are paths for CRUD operations. The URI, planner, with a GET method, retrieves all of the plans in the database, planner/{id} with the @PathVariable id finds a plan by id, and also uses a GET method. The planner route with the POST method will create new plans. There are two versions of updating, a replace all based on the planner/{id} with a PUT method, and a replace for certain portions of the plan by using a PATCH method. Lastly, the DELETE method for planner/{id}, will delete any plans the user has.
 
-The front-end of this application uses Javascipt with AJAX to send data to the back-end routes. The table that displays the upcoming trip's cities was done dynamically on the JS side, along with the buttons to update and delete a trip, and the update trip form. The add trip form is done on the html side, and the data is sent through AJAX upon click of the submit button.
+The front-end of this application uses Javascript with AJAX to send data to the back-end routes. The table that displays the upcoming trip's cities was done dynamically on the JS side, along with the buttons to update and delete a trip, and the update trip form. The add trip form is done on the html side, and the data is sent through AJAX upon click of the submit button.
+
+The front-end of this application has been refractored to use Angular 5. I used RxJs to do the routing and used a date pipe to nicely display the dates. I added a class called Trip to hold the object, and a service class to handle all of the routing with HttpClient. On the HTML side, I used ngModel to pass the data back and forth with two way (banana in a box) binding. There is only one page for the front-end, and uses ngIf to change out the display based on what is clicked. Then bootstrap to just make the page a bit more user friendly.
 
 ### Lessons Learned
 
