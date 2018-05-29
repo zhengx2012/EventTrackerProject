@@ -1,3 +1,4 @@
+import { UpcomingTripsPipe } from './../upcoming-trips.pipe';
 import { TripService } from './../trip.service';
 import { Component, OnInit } from '@angular/core';
 import { Trip } from '../models/trip';
@@ -33,6 +34,11 @@ export class TripPlannerComponent implements OnInit {
     this.editTrip = Object.assign({}, this.selectedTrip);
   };
 
+  getUpcomingTrips = function() {
+    return this.upcomingTripsPipe.transform(this.trips).length;
+  };
+
+  // CRUD
   showAllTrips = function() {
     this.tripService.index().subscribe(
       data => this.trips = data,
@@ -72,7 +78,10 @@ export class TripPlannerComponent implements OnInit {
   };
 
   // helpers
-  constructor(private tripService: TripService) { }
+  constructor(
+    private tripService: TripService,
+    private upcomingTripsPipe: UpcomingTripsPipe,
+  ) { }
 
   ngOnInit() {
     this.showAllTrips();

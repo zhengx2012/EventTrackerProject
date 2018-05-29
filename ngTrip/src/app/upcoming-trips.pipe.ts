@@ -7,17 +7,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class UpcomingTripsPipe implements PipeTransform {
 
   transform(trips: Trip[], showAll?: boolean): any {
+    const results = [];
     if (showAll) {
       return trips;
     }
 
     trips.forEach(trip => {
-      if (trip.date < Date.now()) {
-
+      const now = Date.now().toString;
+      if (trip.date.toDateString < now) {
+        results.push(trip);
       }
     });
 
-    return null;
+    return results;
   }
 
 }
