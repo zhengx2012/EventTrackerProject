@@ -56,6 +56,9 @@ export class TripPlannerComponent implements OnInit {
   };
 
   createTrip = function(newTrip) {
+    if (newTrip.flightTime) {
+      newTrip.flightTime += ':00';
+    }
     this.tripService.create(newTrip).subscribe(
       data => {
         this.showAllTrips(),

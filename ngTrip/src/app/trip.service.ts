@@ -9,9 +9,9 @@ import { Trip } from './models/trip';
   providedIn: 'root'
 })
 export class TripService {
-  private baseUrl = 'http://localhost:8080/';
+  // private baseUrl = 'http://localhost:8080/';
   // private baseUrl = '18.188.37.170:8080/TripPlanner/';
-  // private baseUrl = '/TripPlanner/';
+  private baseUrl = '/TripPlanner/';
   private url = this.baseUrl + 'api/trips';
 
   index() {
